@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="img/png" sizes="32x32" href="img/favicon.ico">
+<link rel="icon" type="img/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Loan Calculator</title>
+  </head>
+  <body>
+    <div class="main-wrapper flex-fluid">
+      <section>
+        <header>
+          <h1 class="title-holder">Penalty Calculator</h1>
+        </header>
+      </section>
+      <form>
+        <div class="due-container">
+          <label class="block">Due Date: </label>
+          <input type="date" class="due" required />
+          <!-- <span id="error-message" class="error hidden">Error Message</span> -->
+        </div>
+        <div class="past-container">
+          <label class="block">Past Due: </label>
+          <input type="date" class="past" required />
+          <!-- <span id="error-message" class="error hidden">Error Message</span> -->
+        </div>
+        <div class="monthly-container">
+          <label class="block">Monthly Amortization: </label>
+          <input type="number" class="monthly" placeholder="₱0.00" required />
+          <!-- <span id="error-message" class="error hidden">Error Message</span> -->
+        </div>
+        <button type="submit" class="check block">Calculate</button>
+        <button type="reset" class="reset block">Reset</button>
+      </form>
+    </div>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1 class = "modal-title">Please settle this:</h1>
+      Your Monthly Amortization is <p class = "monthly-result"></p> and 
+      <p class = "para-fluid">your 5% interest per day is <p id="percentage"></p>. And as of now your <p id="delayed-days"></p> day(s) delayed. Over all your additional payment is <p id="total-payment"></p>.
+      
+    </p>
+    <hr>
+    <div class="result-container">
+    <h1 class ="result-title">Total: </h1>
+    <h1 class="total-payment"></h1>
+  </div>
+</div>
+    <div class="overlay hidden"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
